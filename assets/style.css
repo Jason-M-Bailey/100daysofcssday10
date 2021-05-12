@@ -1,0 +1,96 @@
+body {
+    background: rgb(218,217,235);
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 5px;
+  box-shadow: inset -1px 2px 4px 0 rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #f6e8d7 0%, #dabe9b 100%);
+}
+
+.ground {
+  background: #232323;
+  height: 40%;
+}
+
+.shoes {
+  position: relative;
+  height: 60%;
+  animation: 2s ease-in appear; /* appear is the animation name */
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.shoe img {
+  display: block;
+  transform-origin: 0 95%;
+  animation: 2s ease-in-out walking infinite; /* walking is animation name */
+}
+
+.shoe {
+  position: absolute;
+  bottom: 0;
+  left: 33%;
+  transform-origin: 50% -80px;
+  animation: 2s ease-in-out swing infinite; /* swing = animation name */
+}
+
+@keyframes walking {
+  0% {
+    transform: rotate(-10deg) translateX(10px) translateY(-5px);
+  }
+  25% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: rotate(10deg) translateX(-10px) translateY(-10px);
+  }
+  75% {
+    transform: translateX(0) translateY(-30px);
+  }
+  100% {
+    transform: rotate(-10deg) translateX(10px) translateY(-5px);
+  }
+}
+
+.right-shoe img {
+  animation-delay: 1s;
+}
+
+.right-shoe {
+  animation-delay: 1s;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(-22deg);
+  }
+  50% {
+    transform: rotate(40deg);
+  }
+  100% {
+    transform: rotate(-22deg);
+  }
+}
